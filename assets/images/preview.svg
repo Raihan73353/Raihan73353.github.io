@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1365" height="768" viewBox="0 0 1365 768" role="img" aria-label="Laravel Warriors banner">
+  <defs>
+    <!-- gradient background -->
+    <linearGradient id="bgGrad" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#071018"/>
+      <stop offset="1" stop-color="#041014"/>
+    </linearGradient>
+
+    <!-- neon glow filter -->
+    <filter id="neon" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="8" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- stronger outer glow -->
+    <filter id="outerGlow" x="-80%" y="-80%" width="260%" height="260%">
+      <feGaussianBlur stdDeviation="14" result="g1"/>
+      <feColorMatrix in="g1" type="matrix"
+        values="0 0 0 0 0
+                0 0 0 0 0.75
+                0 0 0 0 0.85
+                0 0 0 0.9 0"/>
+      <feMerge>
+        <feMergeNode />
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- subtle grain (using tiny circles pattern) -->
+    <pattern id="grain" width="6" height="6" patternUnits="userSpaceOnUse">
+      <circle cx="1" cy="1" r="0.6" fill="rgba(255,255,255,0.02)"/>
+    </pattern>
+
+    <!-- small node style for network -->
+    <symbol id="node">
+      <circle cx="0" cy="0" r="4" />
+      <circle cx="0" cy="0" r="1.6" fill="#0ff"/>
+    </symbol>
+
+    <!-- small icon placeholder (rounded rectangle + chevron) -->
+    <symbol id="icon-card" viewBox="0 0 48 32">
+      <rect x="1" y="4" width="46" height="24" rx="4" ry="4" fill="none" stroke="#0ff" stroke-width="2"/>
+      <rect x="6" y="10" width="10" height="4" rx="1" fill="#0ff" opacity="0.12"/>
+      <circle cx="40" cy="16" r="3" fill="none" stroke="#0ff" stroke-width="1.8"/>
+    </symbol>
+
+    <style>
+      <![CDATA[
+        /* Recommend to load Montserrat or similar for best match */
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;700;900&display=swap');
+      ]]>
+    </style>
+  </defs>
+
+  <!-- background -->
+  <rect width="100%" height="100%" fill="url(#bgGrad)"/>
+  <rect width="100%" height="100%" fill="url(#grain)" opacity="0.12"/>
+
+  <!-- decorative top-right arc -->
+  <g transform="translate(1180,40)">
+    <path d="M0,80 A220,220 0 0 1 220,-80" fill="none" stroke="#04f0ea" stroke-opacity="0.07" stroke-width="6"/>
+  </g>
+
+  <!-- network lines bottom-left -->
+  <g id="network" stroke="#06f0ea" stroke-opacity="0.12" stroke-width="2" fill="none" transform="translate(40,420) scale(1)">
+    <path d="M40,90 L120,30 L220,80 L300,20" stroke-linecap="round"/>
+    <path d="M60,120 L140,60 L240,110" stroke-linecap="round"/>
+    <path d="M15,60 L40,90" stroke-linecap="round"/>
+    <!-- nodes -->
+    <g transform="translate(40,90)"><use href="#node" fill="#06f0ea" opacity="0.18"/></g>
+    <g transform="translate(120,30)"><use href="#node" fill="#06f0ea" opacity="0.22"/></g>
+    <g transform="translate(220,80)"><use href="#node" fill="#06f0ea" opacity="0.20"/></g>
+    <g transform="translate(300,20)"><use href="#node" fill="#06f0ea" opacity="0.16"/></g>
+  </g>
+
+  <!-- scattered small glowing dots -->
+  <g fill="#06f0ea" opacity="0.09">
+    <circle cx="980" cy="120" r="6"/>
+    <circle cx="1120" cy="220" r="4"/>
+    <circle cx="1280" cy="320" r="3"/>
+    <circle cx="1060" cy="60" r="5"/>
+    <circle cx="250" cy="140" r="3"/>
+  </g>
+
+  <!-- left faint device outline -->
+  <g transform="translate(70,170)" opacity="0.12" stroke="#04f0ea" stroke-width="2" fill="none">
+    <rect x="0" y="0" rx="10" ry="10" width="220" height="110"/>
+    <circle cx="26" cy="20" r="3" fill="#04f0ea" opacity="0.6"/>
+    <line x1="18" y1="78" x2="202" y2="78"/>
+  </g>
+
+  <!-- right small icons -->
+  <g transform="translate(1120,300)" opacity="0.13">
+    <use href="#icon-card" transform="scale(1.6) translate(-6,-8)"/>
+    <use href="#node" transform="translate(70,20) scale(0.9)" />
+    <use href="#node" transform="translate(20,70) scale(0.8)" />
+  </g>
+
+  <!-- underline glow bar under title -->
+  <g transform="translate(682,420)">
+    <rect x="-200" y="-6" width="400" height="4" rx="2" fill="#07f4ea" opacity="0.9" filter="url(#neon)"/>
+  </g>
+
+  <!-- main text: LARAVEL WARRIORS -->
+  <g font-family="Montserrat, Arial, Helvetica, sans-serif" text-anchor="middle" fill="#06f0ea" filter="url(#outerGlow)">
+    <text x="682" y="230" font-size="110" font-weight="900" letter-spacing="6">PEJUANG</text>
+    <text x="682" y="340" font-size="130" font-weight="900" letter-spacing="6">LARAVEL</text>
+  </g>
+
+  <!-- soft inner glow to main text for crisp neon -->
+  <g font-family="Montserrat, Arial, Helvetica, sans-serif" text-anchor="middle" fill="#a8ffff" opacity="0">
+    <text x="682" y="230" font-size="110" font-weight="900" letter-spacing="6" filter="url(#neon)">PEJUANG</text>
+    <text x="682" y="340" font-size="130" font-weight="900" letter-spacing="6" filter="url(#neon)">LARAVEL</text>
+  </g>
+
+  <!-- subtitle -->
+  <g text-anchor="middle" font-family="Montserrat, Arial, Helvetica, sans-serif" fill="#cbd4d8" opacity="0.95">
+    <text x="682" y="490" font-size="28" font-weight="300">Professional &amp; Affordable</text>
+    <text x="682" y="520" font-size="20" font-weight="300" fill="#9ea9ad" opacity="0.9">Website Creation Services</text>
+  </g>
+
+  <!-- faint author/credit line (optional, low-opacity) -->
+  <text x="1160" y="740" font-size="10" font-family="Montserrat, Arial, Helvetica, sans-serif" fill="#7c8a8f" opacity="0.3" text-anchor="end">
+    ©PEJUANG_LARAVEL
+  </text>
+</svg>
