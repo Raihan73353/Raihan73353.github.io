@@ -1,0 +1,392 @@
+/* ======================================
+   CODE TECH - PORTFOLIO WEBSITE
+   Style: Dark Elegant Minimal
+   ====================================== */
+
+:root {
+  --bg-dark: #0d0d0d;
+  --bg-darker: #141414;
+  --text-light: #eaeaea;
+  --text-muted: #aaa;
+  --primary: #1e90ff;
+  --accent: #007bff;
+  --radius: 12px;
+  --transition: 0.3s ease;
+  --font-main: 'Poppins', sans-serif;
+  --font-alt: 'Inter', sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-main);
+  background-color: var(--bg-dark);
+  color: var(--text-light);
+  line-height: 1.7;
+}
+
+/* ===================== Navbar ===================== */
+.navbar {
+  position: sticky;
+  top: 0;
+  background: rgba(13, 13, 13, 0.95);
+  backdrop-filter: blur(6px);
+  z-index: 999;
+  padding: 15px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+.navbar .container {
+  width: 90%;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--text-light);
+}
+
+.logo span {
+  color: var(--primary);
+}
+
+.navbar ul {
+  display: flex;
+  list-style: none;
+  gap: 25px;
+}
+
+.navbar ul li a {
+  text-decoration: none;
+  color: var(--text-light);
+  font-weight: 500;
+  transition: var(--transition);
+}
+
+.navbar ul li a:hover {
+  color: var(--primary);
+}
+
+.btn-primary {
+  background: var(--primary);
+  color: #fff !important;
+  padding: 8px 16px;
+  border-radius: var(--radius);
+  transition: var(--transition);
+}
+
+.btn-primary:hover {
+  background: var(--accent);
+  transform: translateY(-2px);
+}
+
+/* ===================== Hero Section ===================== */
+.hero {
+  height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: linear-gradient(180deg, #0d0d0d, #141414);
+}
+
+.hero h1 {
+  font-size: 2.8rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.hero h1 span {
+  color: var(--primary);
+}
+
+.hero p {
+  max-width: 650px;
+  margin: 0 auto 25px auto;
+  color: var(--text-muted);
+  font-size: 1.1rem;
+}
+
+/* ===================== Section Base ===================== */
+.section {
+  padding: 80px 0;
+  text-align: center;
+}
+
+.section.dark {
+  background: var(--bg-darker);
+}
+
+.section h2 {
+  font-size: 2.2rem;
+  margin-bottom: 40px;
+  position: relative;
+  display: inline-block;
+}
+
+.section h2::after {
+  content: '';
+  display: block;
+  width: 50px;
+  height: 3px;
+  margin: 10px auto;
+  background: var(--primary);
+  border-radius: 5px;
+}
+
+/* ===================== Skills ===================== */
+.skills {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.skill-card {
+  background: #1a1a1a;
+  border: 1px solid #222;
+  padding: 15px 25px;
+  border-radius: var(--radius);
+  font-weight: 600;
+  transition: var(--transition);
+}
+
+.skill-card:hover {
+  background: var(--primary);
+  color: #fff;
+  transform: translateY(-4px);
+}
+
+/* ===================== Portfolio ===================== */
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+}
+
+.portfolio-item {
+  background: #1a1a1a;
+  border-radius: var(--radius);
+  overflow: hidden;
+  transition: var(--transition);
+}
+
+.portfolio-item img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.portfolio-item h4 {
+  padding: 15px;
+}
+
+.portfolio-item:hover {
+  transform: scale(1.03);
+  border: 1px solid var(--primary);
+}
+
+/* ===================== Pricing ===================== */
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+}
+
+.price-card {
+  background: #1a1a1a;
+  border: 1px solid #222;
+  border-radius: var(--radius);
+  padding: 25px;
+  text-align: center;
+  transition: var(--transition);
+}
+
+.price-card.featured {
+  border: 2px solid var(--primary);
+  background: #101010;
+}
+
+.price-card h3 {
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+}
+
+.price {
+  font-size: 1.8rem;
+  color: var(--primary);
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+.price-card ul {
+  list-style: none;
+  color: var(--text-muted);
+  margin-bottom: 25px;
+}
+
+.price-card li {
+  margin: 8px 0;
+}
+
+.price-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--primary);
+}
+
+/* ===================== Team ===================== */
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 25px;
+}
+
+.team-member {
+  background: #1a1a1a;
+  border-radius: var(--radius);
+  padding: 20px;
+  transition: var(--transition);
+}
+
+.team-member img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: var(--radius);
+  margin-bottom: 10px;
+}
+
+.team-member:hover {
+  transform: translateY(-5px);
+  border: 1px solid var(--primary);
+}
+
+/* ===================== Testimoni ===================== */
+.testi-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+}
+
+.testi-card {
+  background: #1a1a1a;
+  padding: 25px;
+  border-radius: var(--radius);
+  font-style: italic;
+  border-left: 3px solid var(--primary);
+  transition: var(--transition);
+}
+
+.testi-card:hover {
+  transform: translateY(-4px);
+}
+
+/* ===================== Contact Buttons ===================== */
+.social-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 2rem;
+  flex-wrap: wrap;
+}
+
+.social-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  color: #ddd;
+  text-decoration: none;
+  background: #1b1b1b;
+  border: 1px solid #333;
+  padding: 0.7rem 1.2rem;
+  border-radius: 50px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.social-btn svg {
+  width: 20px;
+  height: 20px;
+}
+
+.social-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 0 10px rgba(0, 153, 255, 0.5);
+}
+
+.social-btn.github:hover {
+  color: #fff;
+  background: #0d1117;
+  border-color: #58a6ff;
+}
+
+.social-btn.instagram:hover {
+  color: #fff;
+  background: linear-gradient(45deg, #f58529, #dd2a7b, #8134af);
+  border: none;
+}
+
+.social-btn.whatsapp:hover {
+  color: #fff;
+  background: #25d366;
+  border: none;
+}
+
+
+
+/* ===================== Footer ===================== */
+footer {
+  background: #0b0b0b;
+  text-align: center;
+  padding: 25px 0;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  border-top: 1px solid #111;
+}
+
+/* ===================== Animations ===================== */
+[data-animate] {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+[data-animate].visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ===================== Responsive ===================== */
+@media (max-width: 768px) {
+  .navbar ul {
+    display: none;
+  }
+  .navbar.active ul {
+    display: flex;
+    flex-direction: column;
+    background: #111;
+    position: absolute;
+    top: 60px;
+    right: 10px;
+    padding: 15px;
+    border-radius: var(--radius);
+  }
+  .hero h1 {
+    font-size: 2rem;
+  }
+  .section h2 {
+    font-size: 1.8rem;
+  }
+}
