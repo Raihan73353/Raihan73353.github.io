@@ -3,6 +3,8 @@
    Style: Dark Elegant Minimal
    ====================================== */
 
+
+/* ===================== GLOBAL STYLES ===================== */
 :root {
   --bg-dark: #0d0d0d;
   --bg-darker: #141414;
@@ -33,7 +35,8 @@ body {
   line-height: 1.7;
 }
 
-/* ===================== Navbar ===================== */
+
+/* ===================== NAVBAR ===================== */
 .navbar {
   position: sticky;
   top: 0;
@@ -92,7 +95,8 @@ body {
   transform: translateY(-2px);
 }
 
-/* ===================== Hero Section ===================== */
+
+/* ===================== HOME SECTION ===================== */
 .hero {
   height: 90vh;
   display: flex;
@@ -105,7 +109,6 @@ body {
   overflow: hidden;
 }
 
-/* Lapisan gelap transparan biar teks tetap terbaca */
 .hero::before {
   content: "";
   position: absolute;
@@ -115,7 +118,6 @@ body {
   z-index: 0;
 }
 
-/* Supaya teks tetap di atas lapisan */
 .hero .container {
   position: relative;
   z-index: 1;
@@ -139,73 +141,8 @@ body {
   font-size: 1.1rem;
 }
 
-/* Responsif */
-@media (max-width: 768px) {
-  .hero {
-    height: auto;
-    padding: 100px 20px;
-  }
 
-  .hero h1 {
-    font-size: 2rem;
-  }
-}
-
-/* ===================== About Section ===================== */
-
-.about-wrapper {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 40px;
-  max-width: 1100px;        
-  margin: 0 auto;           
-  padding: 40px 20px;       
-}
-
-/* Foto */
-.about-photo img {
-  width: 280px;
-  height: 280px;
-  object-fit: cover;
-  border-radius: 15px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.15);
-}
-
-/* Teks kanan */
-.about-text {
-  max-width: 600px;   /* ✅ Biar paragraf tidak kepanjangan */
-}
-
-.about-text h2 {
-  margin-bottom: 10px;
-}
-
-.about-text p {
-  line-height: 1.7;
-  color: #ccc;
-  font-size: 1rem;
-}
-
-/* Mobile */
-@media (max-width: 768px) {
-  .about-wrapper {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .about-photo img {
-    width: 200px;
-    height: 200px;
-  }
-
-  .about-text {
-    max-width: 100%;
-  }
-}
-
-
-/* ===================== Section Base ===================== */
+/* ===================== BASE SECTION STYLE ===================== */
 .section {
   padding: 80px 0;
   text-align: center;
@@ -232,7 +169,8 @@ body {
   border-radius: 5px;
 }
 
-/* ===================== Skills ===================== */
+
+/* ===================== ABOUT / SKILLS SECTION ===================== */
 .skills {
   display: flex;
   justify-content: center;
@@ -254,74 +192,9 @@ body {
   color: #fff;
   transform: translateY(-4px);
 }
-/* ===================== layanan =============== */
-.layanan-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 30px;
-  margin-top: 40px;
-}
 
-/* Card item */
-.layanan-item {
-  background:  #1a1a1a;
-  padding: 25px;
-  border-radius: 15px;
-  text-align: center;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-  transition: 0.3s;
-}
 
-.layanan-item:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
-}
-
-/* Gambar layanan */
-.layanan-icon {
-  width: 100%;
-  height: 160px;
-  overflow: hidden;
-  border-radius: 12px;
-  margin-bottom: 15px;
-}
-
-.layanan-icon img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-/* Judul */
-.layanan-item h4 {
-  margin: 10px 0;
-  font-size: 1.2rem;
-}
-
-/* Deskripsi */
-.layanan-item p {
-  font-size: 0.9rem;
-  color: #555;
-  margin-bottom: 15px;
-}
-
-/* Tombol */
-.btn-layanan {
-  display: inline-block;
-  padding: 8px 18px;
-  background: #007bff;      /* boleh kamu sesuaikan */
-  color: #fff;
-  border-radius: 8px;
-  text-decoration: none;
-  font-size: 0.9rem;
-  transition: 0.25s;
-}
-
-.btn-layanan:hover {
-  background: #0056b3;
-}
-
-/* ===================== Portfolio ===================== */
+/* ===================== PORTFOLIO SECTION ===================== */
 .portfolio-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -350,7 +223,8 @@ body {
   border: 1px solid var(--primary);
 }
 
-/* ===================== Pricing ===================== */
+
+/* ===================== PRICING SECTION ===================== */
 .pricing-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -399,7 +273,7 @@ body {
 }
 
 
-/* ===================== Testimoni ===================== */
+/* ===================== TESTIMONIAL SECTION ===================== */
 .testi-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -419,7 +293,8 @@ body {
   transform: translateY(-4px);
 }
 
-/* ===================== Contact Buttons ===================== */
+
+/* ===================== CONTACT SECTION ===================== */
 .social-buttons {
   display: flex;
   justify-content: center;
@@ -471,8 +346,7 @@ body {
 }
 
 
-
-/* ===================== Footer ===================== */
+/* ===================== FOOTER ===================== */
 footer {
   background: #0b0b0b;
   text-align: center;
@@ -482,7 +356,8 @@ footer {
   border-top: 1px solid #111;
 }
 
-/* ===================== Animations ===================== */
+
+/* ===================== ANIMATIONS ===================== */
 [data-animate] {
   opacity: 0;
   transform: translateY(40px);
@@ -494,7 +369,8 @@ footer {
   transform: translateY(0);
 }
 
-/* ===================== Responsive ===================== */
+
+/* ===================== RESPONSIVE ===================== */
 @media (max-width: 768px) {
   .navbar ul {
     display: none;
@@ -509,9 +385,16 @@ footer {
     padding: 15px;
     border-radius: var(--radius);
   }
+
+  .hero {
+    height: auto;
+    padding: 100px 20px;
+  }
+
   .hero h1 {
     font-size: 2rem;
   }
+
   .section h2 {
     font-size: 1.8rem;
   }
